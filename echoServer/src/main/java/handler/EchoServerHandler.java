@@ -33,7 +33,9 @@ public class EchoServerHandler extends ChannelInboundHandlerAdapter {
         //消息记录控制台
         System.out.println("==>Server received: " + in.toString(CharsetUtil.UTF_8));
         //接收的消息发送给发送者
-        ctx.write(in);
+        final String reponseMsg = "helloworld";
+        System.out.println("==> Server callBack " + reponseMsg);
+        ctx.write(reponseMsg);
     }
 
     /**
